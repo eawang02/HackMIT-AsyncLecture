@@ -1,0 +1,25 @@
+<html>
+    <head>
+      <title>Title</title>
+    </head>
+    <body>
+    
+      <iframe src="https://player.vimeo.com/video/747752214" width="1200" height="900" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    
+      <button onclick="player.getCurrentTime().then(function(seconds) {console.log('Current time:', seconds);});">Click me</button>
+      <p id="demo"></p>
+
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      <script>
+
+        var iframe = document.querySelector('iframe');
+        var player = new Vimeo.Player(iframe);
+
+        player.on('play', function() {
+        console.log('Played the video');
+        });
+
+      </script>
+    
+    </body>
+</html>
