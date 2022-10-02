@@ -5,12 +5,23 @@
 {% endblock %}
 
 {% block main %}
-<h1>Lecture Title</h1>
-        <div classs = "Lecture Video">
-            <iframe src="https://player.vimeo.com/video/747752214" width="1200" height="900" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div id="container">
+        <div class = "More Lectures" id="left-column">
+            <h3>More Lectures</h3>
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Lecture 2</div>
+                <div class="card-body">
+                  <h4 class="card-title">Finding Waldo</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div id="middle-column">
+            <h1 id = "title">Lecture 1: Chains of Habit</h1>
+            <iframe src="https://player.vimeo.com/video/747752214" width="800" height="472.5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     
-            <button onclick="player.getCurrentTime().then(function(seconds) {console.log('Current time:', seconds);});">Click me</button>
-            <p id="demo"></p>
+            <!-- <button onclick="player.getCurrentTime().then(function(seconds) {console.log('Current time:', seconds);});">Click me</button>
+            <p id="demo"></p> -->
       
             <script src="https://player.vimeo.com/api/player.js"></script>
             <script>
@@ -24,15 +35,24 @@
       
             </script> 
 
-        </div>
+    </div>
+    <div class = "previous question" id="right-column">
+        <h3>Previous Questions</h3>
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Question 1</div>
+            <div class="card-body">
+              <h4 class="card-title">Who are you?</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
 
+    </div>
+
+    <div id="bottom">
+        <h3>Questions</h3>
         <div class = "Questions">
-        <button type = "Question" >Post A Question</button>
-    </div>
-    <div class = "More Lectures">
-        <h2> More Lectures</h2>
-    </div>
-    <div class = "previous question">
-        <h2>Previous Questions</h2>
+            <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit">Post A Question</button>
+        </div>
     </div>
 {% endblock %}
