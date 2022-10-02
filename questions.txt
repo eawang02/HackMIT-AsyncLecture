@@ -1,2 +1,2 @@
 {"name": "Student", "time": 7.416, "text": "Will this be on the exam?", "instructor": "This is a response to question 1. (Yes)"}
-{"name": "Student", "time": 16.5, "text": "Can I submit this homework on Gradescope?", "instructor": "Yes, but only as a PDF. Be mindful of the deadlines."}
+{"name": "Student", "time": 16.5, "text": "How great is HackMIT?", "instructor": "It's amazing!"}
