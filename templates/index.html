@@ -48,6 +48,7 @@
       
                 player.on('play', function() {
                 console.log('Played the video');
+                console.log(questions[0])
 
                 question.onclick = () => {
                 let time = player.getCurrentTime().then(time => 
@@ -67,7 +68,7 @@
                 }
 
                 for(let i = 0; i < questions.length; i++){
-                  let flag = true
+                  let flag = false
                   while(flag){
                     player.getCurrentTime().then(time => {
                       console.log(time);
