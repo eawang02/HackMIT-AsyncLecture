@@ -18,7 +18,7 @@
         </div>
         <div id="middle-column">
             <h1 id = "title">Lecture 1: Chains of Habit</h1>
-            <iframe src="https://player.vimeo.com/video/747752214" width="800" height="472.5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/747752214" width="800" height="472.5" frameborder="0"></iframe>
     
             <!-- <button onclick="player.getCurrentTime().then(function(seconds) {console.log('Current time:', seconds);});">Click me</button>
             <p id="demo"></p> -->
@@ -45,7 +45,7 @@
                         url:"/test",
                         type:"POST",
                         contentType: "application/json",
-                        data: JSON.stringify(s)});
+                        data: JSON.stringify(s) });
                     }
                     )
             }
@@ -89,7 +89,7 @@
             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
           </div>
         <div id="qs_btn">
-            <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit">Submit</button>
+            <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit" id="question">Submit</button>
         </div>
     </div>
 {% endblock %}
