@@ -36,10 +36,10 @@
                 question.onclick = () => {
                 let time = player.getCurrentTime().then(time => 
                     {
-                    //console.log(time);
+                    const name = "Student"
                     const question = ""
-                    const dict = {time, question}
-                    const s = JSON.stringify(dict) // In the actual application, store the question content as well
+                    const dict = {name, time, question}
+                    const s = JSON.stringify(dict)
                     console.log(s)
                     $.ajax({
                         url:"/test",
@@ -48,7 +48,6 @@
                         data: JSON.stringify(s)});
                     }
                     )
-                //time.then(time => console.log(time))
             }
               });
       
