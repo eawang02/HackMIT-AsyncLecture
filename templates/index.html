@@ -43,12 +43,14 @@
                 var iframe = document.querySelector('iframe');
                 var player = new Vimeo.Player(iframe);
                 const buttonA = document.querySelector('question')
-                const questions = '{{ questions }}'
+                let questions = '{{ questions }}' // Loads questions as a string of a list of dictionaries
+                questions = questions.replace(/&#39;/g,'\'')
+                questions = eval('(' + questions + ')');
                 console.log(questions)
       
                 player.on('play', function() {
                 console.log('Played the video');
-                console.log(questions[0])
+                console.log(questions[0]['time'])
 
                 question.onclick = () => {
                 let time = player.getCurrentTime().then(time => 
