@@ -13,8 +13,8 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    refresh()
-    return render_template("index.html")
+    questions = refresh()
+    return render_template("index.html", questions=questions)
 
 @app.route('/test', methods=['POST'])
 def test():
@@ -39,7 +39,7 @@ def refresh():
     questions = sorted(questions, key=lambda i: i['time'])
     print(questions)
 
-    return
+    return questions
 
 def saveQuestion(q):
     question_file = open(r"questions.txt", "a+")

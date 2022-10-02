@@ -43,6 +43,8 @@
                 var iframe = document.querySelector('iframe');
                 var player = new Vimeo.Player(iframe);
                 const buttonA = document.querySelector('question')
+                const questions = '{{ questions }}'
+                console.log(questions)
       
                 player.on('play', function() {
                 console.log('Played the video');
