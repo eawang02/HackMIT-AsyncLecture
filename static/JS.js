@@ -5,5 +5,5 @@ function hide_qs() {
 function show_qs() {
     document.getElementById("question_response").style.display = "block";
 }
- 
+
 hide_qs();

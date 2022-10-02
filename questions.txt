@@ -4,3 +4,5 @@
 {"name": "Student", "time": 2.5, "text": ""}
 {"name": "Student", "time": 53.007, "text": ""}
 {"name": "Student", "time": 54.052, "text": ""}
+{"name": "Student", "time": 5.385, "text": {}}
+{"name": "Student", "time": 2.507, "text": "hi"}

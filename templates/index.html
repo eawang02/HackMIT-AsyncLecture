@@ -53,7 +53,7 @@
                 let time = player.getCurrentTime().then(time => 
                     {
                     const name = "Student"
-                    const text = ""
+                    const text = document.getElementById("exampleTextarea").value
                     const dict = {name, time, text}
                     const s = JSON.stringify(dict)
                     console.log(s)
