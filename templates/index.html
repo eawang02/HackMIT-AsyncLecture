@@ -39,6 +39,7 @@
       
             <script src="https://player.vimeo.com/api/player.js"></script>
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+            <script type="text/javascript" src="/static/JS.js"></script>
             <script>
                 var iframe = document.querySelector('iframe');
                 var player = new Vimeo.Player(iframe);
@@ -71,9 +72,10 @@
                     }
                     )
                 }});
-      
+
                 player.on('cuepoint', function(data){
                   console.log('cuepoint reached: ' + data['time'])
+                  show_qs()
                 });
 
             </script> 

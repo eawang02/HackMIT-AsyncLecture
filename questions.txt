@@ -1,3 +1,3 @@
 {"name": "Student", "time": 5.373, "text": "Test 1"}
-{"name": "Student", "time": 8.141, "text": "Test 2"}
-{"name": "Student", "time": 11.959, "text": "Test 3"}
+{"name": "Student", "time": 11.141, "text": "Test 2"}
+{"name": "Student", "time": 20.959, "text": "Test 3"}
