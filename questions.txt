@@ -1,15 +1,1 @@
-<<<<<<< HEAD
-{"name": "Student", "time": 1.499, "text": ""}
-{"name": "Student", "time": 2.452, "text": ""}
-{"name": "Student", "time": 3.584, "text": ""}
-{"name": "Student", "time": 2.5, "text": ""}
-{"name": "Student", "time": 53.007, "text": ""}
-{"name": "Student", "time": 54.052, "text": ""}
-{"name": "Student", "time": 5.385, "text": {}}
-{"name": "Student", "time": 2.507, "text": "hi"}
-{"name": "Student", "time": 99.454, "text": "How do we calculate the absolute value of y?"}
-=======
-{"name": "Student", "time": 5.373, "text": "Test 1"}
-{"name": "Student", "time": 8.141, "text": "Test 2"}
-{"name": "Student", "time": 11.959, "text": "Test 3"}
->>>>>>> 9d1b06bc77cee0d06d441de1c1b9ff9b787bcade
+{"name": "Student", "time": 5.000, "text": "Test1"}
