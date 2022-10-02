@@ -13,7 +13,6 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    refresh()
     return render_template("index.html")
 
 @app.route('/test', methods=['POST'])
@@ -24,23 +23,4 @@ def test():
     result = json.loads(output) #this converts the json output to a python dictionary
     print(result) # Printing the new dictionary
     print(type(result))#this shows the json converted as a python dictionary
-    saveQuestion(result)
-
     return result
-
-def refresh():
-    # Open questions.txt and parse data
-    # Create queue of questions to post on video
-    # Send queue to JS frontend
-    questions_File = open(r"questions.txt", "r")
-
-
-    questions_File.close()
-    return
-
-def saveQuestion(q):
-    questions_File = open(r"questions.txt", "a+")
-    questions_File.write(q)
-
-    questions_File.close()
-    return
