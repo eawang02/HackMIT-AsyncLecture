@@ -47,13 +47,15 @@
                 questions = questions.replace(/&#39;/g,'\'')
                 questions = eval('(' + questions + ')');
                 console.log(questions)
+
+                for (let i = 0; i < questions.length; i++){
+                  player.addCuePoint(questions[i]['time'], questions[i]).then(function(id) {console.log(questions[i]['time'])})
+                }
+
+                player.getCueTimes().then(function(data) {console.log(data[0])})
       
                 player.on('play', function() {
                 console.log('Played the video');
-
-                for (let i = 0; i < questions.length; i++){
-                  player.addCuePoint(questions[i]['time'])
-                }
 
                 question.onclick = () => {
                 let time = player.getCurrentTime().then(time => 
@@ -70,22 +72,12 @@
                         data: JSON.stringify(s) });
                     }
                     )
-                }
-
-                for(let i = 0; i < questions.length; i++){
-                  let flag = false
-                  let nextq = questions[i]['time']
-                  while(flag){
-                    player.getCurrentTime().then(time => {
-                      console.log(time);
-                      if(time < questions[i]['time']){flag = false}
-                    })
-                  }
-                  document.getElementById("student_q") = questions[i]['text']
-                  show_qs()
-                }
-              });
+                }});
       
+                player.on('cuepoint', function(data){
+                  alert('cuepoint reached: ' + cueTime)
+                });
+
             </script> 
         <div id="question_response" class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
