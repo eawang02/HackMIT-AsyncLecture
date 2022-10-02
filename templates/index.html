@@ -51,8 +51,6 @@
                 for (let i = 0; i < questions.length; i++){
                   player.addCuePoint(questions[i]['time'], questions[i]).then(function(id) {console.log(questions[i]['time'])})
                 }
-
-                player.getCueTimes().then(function(data) {console.log(data[0])})
       
                 player.on('play', function() {
                 console.log('Played the video');
@@ -75,7 +73,7 @@
                 }});
       
                 player.on('cuepoint', function(data){
-                  alert('cuepoint reached: ' + cueTime)
+                  console.log('cuepoint reached: ' + data['time'])
                 });
 
             </script> 
