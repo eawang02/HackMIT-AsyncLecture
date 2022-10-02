@@ -64,24 +64,34 @@
                         data: JSON.stringify(s) });
                     }
                     )
-            }
+                }
+
+                for(let i = 0; i < questions.length; i++){
+                  let flag = true
+                  while(flag){
+                    player.getCurrentTime().then(time => {
+                      console.log(time);
+                      if(time < questions[i]['time']){flag = false}
+                    })
+                  }
+                  document.getElementById("student_q") = questions[i]['text']
+                  show_qs()
+                }
               });
       
             </script> 
         <div id="question_response" class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Question</h5>
-                <small>3 days ago</small>
+                <h5 class="mb-1">Student Question</h5>
               </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="mb-1" id="student_q">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Instructor's Response</h5>
-                <small class="text-muted">3 days ago</small>
               </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="mb-1" id="instructor_a">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
         </div>
 
