@@ -22,12 +22,12 @@
                 //console.log(time);
                 const s = JSON.stringify(time) // In the actual application, store the question content as well
                 console.log(s)
-                // $.ajax({
-                //   url:"/test",
-                //   type:"POST",
-                //   contentType: "application/json",
-                //   data: JSON.stringify(s)
-                // });
+                $.ajax({
+                  url:"/test",
+                  type:"POST",
+                  contentType: "application/json",
+                  data: JSON.stringify(s)
+                });
               }
               )
             //time.then(time => console.log(time))

@@ -24,13 +24,32 @@
             <p id="demo"></p> -->
       
             <script src="https://player.vimeo.com/api/player.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
             <script>
+                var iframe = document.querySelector('iframe');
+                var player = new Vimeo.Player(iframe);
+                const buttonA = document.querySelector('question')
       
-              var iframe = document.querySelector('iframe');
-              var player = new Vimeo.Player(iframe);
-      
-              player.on('play', function() {
-              console.log('Played the video');
+                player.on('play', function() {
+                console.log('Played the video');
+
+                question.onclick = () => {
+                let time = player.getCurrentTime().then(time => 
+                    {
+                    //console.log(time);
+                    const question = ""
+                    const dict = {time, question}
+                    const s = JSON.stringify(dict) // In the actual application, store the question content as well
+                    console.log(s)
+                    $.ajax({
+                        url:"/test",
+                        type:"POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(s)});
+                    }
+                    )
+                //time.then(time => console.log(time))
+            }
               });
       
             </script> 
@@ -52,7 +71,7 @@
     <div id="bottom">
         <h3>Questions</h3>
         <div class = "Questions">
-            <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit">Post A Question</button>
+            <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit" id="question">Post A Question</button>
         </div>
     </div>
 {% endblock %}
