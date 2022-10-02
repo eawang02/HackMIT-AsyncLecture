@@ -18,15 +18,15 @@
             <div class="card border-primary mb-3" style="max-width: 20rem;">
                 <div class="card-header">Lecture 3</div>
                 <div class="card-body">
-                  <h4 class="card-title">Counting</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h4 class="card-title">Random Variables</h4>
+                  <img src="https://images.deepai.org/glossary-terms/random-variable-4279649.jpg" width="280px">
                 </div>
             </div>
             <div class="card border-primary mb-3" style="max-width: 20rem;">
                 <div class="card-header">Lecture 4</div>
                 <div class="card-body">
-                  <h4 class="card-title">Probability in Computing</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h4 class="card-title">Expectation</h4>
+                  <img src="https://cdn.kastatic.org/googleusercontent/94-P3amqqwYvKIphEcrtv7JqyzLa1zoWTCZmP00ykhXCzTa6N_cVs13GAT3Z-lOj1COPl1UyldPYDAXshAkAp3Scfw" width="280px">
                 </div>
             </div>
         </div>
@@ -74,10 +74,10 @@
                 }});
 
                 player.on('cuepoint', function(data){
+                  $("#question_response").fadeIn();
                   console.log('cuepoint reached: ' + data['time'])
-                  $("#question_response").fadeIn()
 
-                  
+                  setTimeout(function() {$("#question_response").fadeOut()}, 5000)
                 });
 
             </script> 
