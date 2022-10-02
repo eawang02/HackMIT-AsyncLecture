@@ -43,8 +43,14 @@
                 var iframe = document.querySelector('iframe');
                 var player = new Vimeo.Player(iframe);
                 const buttonA = document.querySelector('question')
-                const questions = '{{ questions }}'
+                let questions = '{{ questions }}' // Loads questions as a string of a list of dictionaries
+                questions = questions.replace(/&#39;/g,'\'')
+                questions = eval('(' + questions + ')');
                 console.log(questions)
+
+                for (let i = 0; i < questions.length; i++){
+                  player.addCuePoint(questions[i]['time'], questions[i]).then(function(id) {console.log(questions[i]['time'])})
+                }
       
                 player.on('play', function() {
                 console.log('Played the video');
@@ -64,24 +70,25 @@
                         data: JSON.stringify(s) });
                     }
                     )
-            }
-              });
+                }});
       
+                player.on('cuepoint', function(data){
+                  console.log('cuepoint reached: ' + data['time'])
+                });
+
             </script> 
         <div id="question_response" class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Question</h5>
-                <small>3 days ago</small>
+                <h5 class="mb-1">Student Question</h5>
               </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="mb-1" id="student_q">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Instructor's Response</h5>
-                <small class="text-muted">3 days ago</small>
               </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="mb-1" id="instructor_a">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
         </div>
 
