@@ -13,7 +13,8 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    questions = refresh()
+    return render_template("index.html", questions=questions)
 
 @app.route('/test', methods=['POST'])
 def test():
@@ -23,4 +24,28 @@ def test():
     result = json.loads(output) #this converts the json output to a python dictionary
     print(result) # Printing the new dictionary
     print(type(result))#this shows the json converted as a python dictionary
+
+    saveQuestion(output)
     return result
+
+def refresh():
+    question_file = open(r"questions.txt", "r")
+    raw = question_file.readlines()
+    questions = []
+
+    for x in raw:
+        questions.append(json.loads(x))    
+
+    questions = sorted(questions, key=lambda i: i['time'])
+    print(questions)
+
+    return questions
+
+def saveQuestion(q):
+    question_file = open(r"questions.txt", "a+")
+    question_dict = json.loads(q)
+
+    question_file.write(json.dumps(question_dict) + "\n")
+
+    question_file.close()
+    return
