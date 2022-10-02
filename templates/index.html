@@ -7,7 +7,9 @@
 {% block main %}
     <div id="container">
         <div class = "More Lectures" id="left-column">
-            <h3>More Lectures</h3>
+            <h5>&nbsp;</h5>
+            <h6>&nbsp;</h6>
+            <h3 id="more_lecs">More Lectures</h3>
             <div class="card border-primary mb-3" style="max-width: 20rem;">
                 <div class="card-header">Lecture 2</div>
                 <div class="card-body">
@@ -37,7 +39,9 @@
 
     </div>
     <div class = "previous question" id="right-column">
-        <h3>Previous Questions</h3>
+        <h5>&nbsp;</h5>
+        <h5>&nbsp;</h5>
+        <h3 id="prev_qs">Previous Questions</h3>
         <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Question 1</div>
             <div class="card-body">
@@ -51,7 +55,11 @@
 
     <div id="bottom">
         <h3>Questions</h3>
-        <div class = "Questions">
+        <div class="form-group" id="qs_box">
+            <label for="exampleTextarea" class="form-label mt-4">Example textarea</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+        <div id="qs_btn">
             <button class="btn btn-primary btn-xs my-2 my-sm-0" type="submit">Post A Question</button>
         </div>
     </div>
