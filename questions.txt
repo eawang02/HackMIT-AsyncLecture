@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-{"name": "Student", "time": 5.000, "text": "Test1"}
-=======
-{"name": "Student", "time": 5.373, "text": "Test 1"}
-{"name": "Student", "time": 11.141, "text": "Test 2"}
-{"name": "Student", "time": 20.959, "text": "Test 3"}
->>>>>>> 34e539d78aaf40786ba3a00208a2d5e26e1404de
+{"name": "Student", "time": 7.416, "text": "Will this be on the exam?", "instructor": "This is a response to question 1. (Yes)"}
+{"name": "Student", "time": 16.5, "text": "Can I submit this homework on Gradescope?", "instructor": "Yes, but only as a PDF. Be mindful of the deadlines."}

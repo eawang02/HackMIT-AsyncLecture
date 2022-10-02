@@ -61,7 +61,8 @@
                     {
                     const name = "Student"
                     const text = document.getElementById("exampleTextarea").value
-                    const dict = {name, time, text}
+                    const instructor = ""
+                    const dict = {name, time, text, instructor}
                     const s = JSON.stringify(dict)
                     console.log(s)
                     $.ajax({
@@ -73,9 +74,12 @@
                     )
                 }});
 
-                player.on('cuepoint', function(data){
+                player.on('cuepoint', function(cue){
+                  console.log(cue['data']['text'])
+                  document.getElementById('student_q').innerHTML = cue['data']['text']
+                  document.getElementById('instructor_a').innerHTML = cue['data']['instructor']
                   $("#question_response").fadeIn();
-                  console.log('cuepoint reached: ' + data['time'])
+                  console.log('cuepoint reached: ' + cue['time'])
 
                   setTimeout(function() {$("#question_response").fadeOut()}, 5000)
                 });
